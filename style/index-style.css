@@ -1,0 +1,25 @@
+#top-section {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template : 5% 10% 45% 5% 40%/ 30% 40% 30% ;
+}
+#background-top {
+    grid-row: 2 / 5;
+    grid-column: 1/5;
+    animation: 4s ease-in-out;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 65.52%, 100% 63.21%, 86.94% 80.57%, 85.61% 68.93%, 73.88% 87.12%, 79.04% 58%, 56.53% 86.5%, 57.56% 69.26%, 45.1% 82.23%, 45.1% 72.42%, 33.09% 89.45%, 39.44% 54.09%, 21.57% 78.53%, 20.72% 64.12%, 10.13% 77.8%, 11.76% 54.12%, 0% 86%);
+}
+
+#background-top:hover {
+    height: 150%;
+}
+
+#background-top > * {
+    width: 100%;
+}
+
+#title-top {
+    background-image: url(../assets/Cyberpunk-title.png);
+    height: 40%;
+}
