@@ -1,25 +1,156 @@
+main {
+    background-color: #fffc1d;
+}
+
+/* Tout ce qui concerne la partie du haut */
 #top-section {
     height: 100vh;
     width: 100vw;
     display: grid;
     grid-template : 5% 10% 45% 5% 40%/ 30% 40% 30% ;
+    background: linear-gradient(0deg, rgba(255,252,29,1) 0%, rgba(12,4,19,1) 100%);
 }
+/* La video et comment elle est positionnée */
 #background-top {
-    grid-row: 2 / 5;
+    grid-row: 1 / 5;
     grid-column: 1/5;
-    animation: 4s ease-in-out;
+    height: 100%;
+    transition: all ease-in-out 0.5s;
     clip-path: polygon(0% 0%, 100% 0%, 100% 65.52%, 100% 63.21%, 86.94% 80.57%, 85.61% 68.93%, 73.88% 87.12%, 79.04% 58%, 56.53% 86.5%, 57.56% 69.26%, 45.1% 82.23%, 45.1% 72.42%, 33.09% 89.45%, 39.44% 54.09%, 21.57% 78.53%, 20.72% 64.12%, 10.13% 77.8%, 11.76% 54.12%, 0% 86%);
 }
-
+/* Quand on passe la souris sur la video */
 #background-top:hover {
     height: 150%;
+    transition: all ease-in-out 0.5s;
 }
-
+/* Faire en sorte que la video prenne toute la div */
 #background-top > * {
     width: 100%;
 }
-
+/* L'image avec ecrit "cyberpunk" */
 #title-top {
-    background-image: url(../assets/Cyberpunk-title.png);
-    height: 40%;
+    grid-row: 2;    
+    grid-column: 2;
+    z-index: 100;
 }
+/* Faire en sorte qu'elle prenne tout l'ecran */
+#title-top > * {
+    width: 100%;
+}
+
+/*La section qui sépare la mid et bot section*/
+#scroll-section {
+    height: 10vh;
+    background-color: rgba(85,38,129,1);
+    clip-path: polygon(0% 0%, 10.28% 46.02%, 22.54% 46.02%, 25.8% 40.54%, 31.28% 49.14%, 34.75% 37.36%, 44.73% 37.36%, 52.43% 19.96%, 59.62% 37.36%, 68.74% 37.36%, 72.18% 49.14%, 83.54% 49.14%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/* Tout ce qui concerne la partie du milieu et du bas */
+#mid-section, #bot-section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#bot-section {
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(85,38,129,1) 100%);
+}
+#mid-section {
+    background-color: #fffc1d;
+}
+
+#container-mid, #container-bot {
+    padding-top: 10vh ;
+    display: flex;
+    justify-content: center;
+}
+/*On gere les zones de textes*/
+#container-mid > *, #container-bot > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1%;
+    text-align: center;
+    color: white;
+    width: 33%;
+    background-color: rgba(126,196,224,1);
+    border-radius: 5px;
+    transition: all ease-in-out 0.3s;
+}
+#container-bot > *{
+    background-color: #586b5d;
+}
+#container-bot > *:hover{
+    box-shadow: 10px 5px 5px #657569;
+    background-color: #839989;
+}
+
+#container-mid > *:hover {
+    box-shadow: 10px 5px 5px black;
+    background-color: #39687c;
+    transition: all ease-in-out 0.3s;
+}
+/*On set la police des titres*/
+#title-mid, #title-bot {
+    color: white;
+    font-size: 3vw;
+    letter-spacing: 5px;
+    font-family: "Press Start 2P", system-ui;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-image: url(../assets/title-img.jpg);
+    clip-path: polygon(0% 33%, 10% 22.5%, 90% 22.5%, 100% 33%, 100% 62.5%, 90% 72.5%, 10% 72.5%, 0% 62.5%);
+}
+/*On rend la couleur du deuxieme titre blanche*/
+#title-bot {
+    color: white;
+}
+
+/*On s'occupe du footer*/
+footer {
+    height: 15vh;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(46,46,46,1) 0%, rgba(0,0,0,1) 100%);
+    color: white;
+}
+
+#container-footer {
+    display: flex;
+
+}
+#contact-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#top, #bot {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 500px) {
+    #background-top {
+        grid-row: 1/3;
+        height: 200%;
+        /* grid-column: 1/7; */
+    }
+    #container-mid, #container-bot {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        height: 80vh;
+    }
+    #container-mid > *, #container-bot > * {
+        width: 90%;
+        height: 33%;
+        font-size: 2vw;
+    }
+    strong {
+        font-size: 3vw;
+    }
+}
+
+
