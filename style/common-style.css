@@ -18,3 +18,38 @@ body {
     font-style: normal;
     font-size: 1.1vw;
 }
+
+#burger {
+    background-image: url(../assets/burger-menu.png);
+    position: fixed;
+    z-index: 999;
+    width: 5vw;
+    height: 5vw;
+    background-size: cover;
+}
+
+#menu-bg {
+    z-index: 1;
+    width: 70vw;
+    height: 100vh;
+    /* margin: 30px 0 20px 20px; */
+    background-color: #959019;
+    border-radius: 50%;
+    transition: 0.3s ease;
+    position: fixed;
+    transform: translate(-60%,-40%);
+    display: none;
+}
+nav {
+    flex-direction: column-reverse;
+    /* justify-content: flex-end; */
+    align-items: flex-end;
+    margin: 0px 10% 15% 5vw;
+    position: fixed;
+    z-index: 2;
+    display: none;
+}
+a {
+    color: white;
+}
+
