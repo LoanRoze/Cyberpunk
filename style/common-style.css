@@ -26,6 +26,7 @@ body {
     width: 5vw;
     height: 5vw;
     background-size: cover;
+    cursor: pointer;
 }
 
 #menu-bg {
