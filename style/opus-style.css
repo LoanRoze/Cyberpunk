@@ -1,0 +1,117 @@
+main {
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(46,46,46,1) 0%, rgba(0,0,0,1) 100%);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card {
+    width: 20vw;
+    height: 30vw;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    color: white;
+    transition: all ease-in-out 0.5s;
+    transform: perspective(1500px) rotateY(15deg);
+}
+.title {
+    font-size: 3vw;
+    font-weight: bold;
+    z-index: 8;
+}
+.text {
+    display: none;
+    animation: comeFromLeft 1s;
+    z-index: 9;
+}
+img {
+    position: fixed;
+    display: flex;
+    width: 20vw;
+    height: 30vw;
+    transition: all ease-in-out 1s;
+    -webkit-transition : -webkit-filter 500ms linear
+}
+
+/*Tout ce qui se passe quand la souris survole une card*/
+#firstcard:hover {
+    #firstTitle {
+        display: none;
+    }
+    #firstText {
+        display: block;
+    }
+    #img1 {
+        filter: brightness(50%);
+    }
+    box-shadow: 10px 5px 5px yellow;
+    justify-content: center;
+    transform: perspective(3000px) rotateY(5deg);
+}
+#secondcard:hover {
+    #secondTitle {
+        display: none;
+        animation: fadeOut 1s
+    }
+    #secondText {
+        display: block;
+    }
+    #img2 {
+        filter: brightness(50%);
+    }
+    box-shadow: 10px 5px 5px yellow;
+    justify-content: center;
+    transform: perspective(3000px) rotateY(5deg);
+
+}
+#thirdcard:hover {
+    #thirdTitle {
+        display: none;
+        animation: fadeOut 1s
+    }
+    #thirdText {
+        display: block;
+    }
+    #img3 {
+        filter: brightness(50%);
+    }
+    box-shadow: 10px 5px 5px yellow;
+    justify-content: center;
+    transform: perspective(3000px) rotateY(5deg);
+}
+
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes comeFromLeft {
+    0% { transform: translate(-5vw, 0vw);
+    opacity: 0;}
+    100% { transform: translate(0vw, 0vw);
+    opacity: 100;}
+}
+
+
+@media (max-width: 500px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .card, img {
+        width: 40vw;
+        height: 60vw;
+    }
+    .text {
+        font-size: 2.5vw;
+    }
+    strong {
+        font-size: 3vw;
+    }
+    .title {
+        font-size: 4vw
+    }
+}
