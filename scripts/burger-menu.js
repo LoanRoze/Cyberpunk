@@ -1,3 +1,4 @@
+//Ce qui se passe quand on clique sur le burger (si il est fermé, on l'ouvre et si il est ouvert on le ferme)
 let burgerState = 0
 function menuOnClick() {
     if (burgerState === 0) {
@@ -10,6 +11,7 @@ function menuOnClick() {
     }
 }
 
+//La fonction qui fait arriver le menu
 function animBurgerEntree(burger) {
   document.querySelector("main").style.filter = "brightness(50%)";
   burger.style.display = "block";
@@ -27,6 +29,7 @@ function animBurgerEntree(burger) {
       "translate(" + xtranslate + "%," + ytranslate + "%)";
   }, 10);
 }
+//La fonction qui fait sortir le menu
 function animBurgerSortie(burger) {
   document.querySelector("main").style.filter = "brightness(1)";
   document.querySelector("nav").style.display = "none";
@@ -44,8 +47,11 @@ function animBurgerSortie(burger) {
       "translate(" + xtranslate + "%," + ytranslate + "%)";
   }, 10);
 }
+//Je suis conscient que je me suis répété sur ces fonctions et que j'aurais pu faire plus simple
 
+//On fait l'event de click sur le burger
 document.getElementById("burger").addEventListener("click", menuOnClick);
+//On fait aussi en sorte que ça enleve le burger si on clique sur l'ecran ou dans la zone de selection du menu
 document.querySelector("main").addEventListener("click", () => {
     if (burgerState === 1) {
         animBurgerSortie(document.querySelector("#menu-bg"))

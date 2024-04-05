@@ -4,6 +4,7 @@ const sections = document.querySelectorAll(".section");
 let isScrolling = false;
 let currentSection = 0;
 
+//Event qui se passe quand on scroll sur la page et qui active la fonction ScrollToSection en fonction de sur quelle section on veut aller
 window.addEventListener(
   "wheel",
   function (event) {
@@ -26,6 +27,7 @@ window.addEventListener(
   { passive: false }
 );
 
+//La fonction qui permet de scroller un une section en particulier
 function scrollToSection(sectionIndex) {
   console.log(sections[sectionIndex].offsetTop);
   console.log(window);
